@@ -15,14 +15,14 @@ class ListFood extends StatefulWidget {
 class _ListFoodState extends State<ListFood> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppCubit, AppState>(
+    return BlocBuilder<Appcubite, Appstate>(
       builder: (context, state) {
         if (state is LoadedState) {
           return SliverList.builder(
             itemBuilder: (context, index) {
-              return Listfood(food: state.x[index]); // استخدام state.x مباشرة
+              return Listfood(food: state.x[index]); 
             },
-            itemCount: state.x.length, // التأكد من عدم استخدام fodds!.length
+            itemCount: state.x.length, 
           );
         } else if (state is ErorrState) {
           return SliverToBoxAdapter(
