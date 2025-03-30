@@ -6,21 +6,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class Appcubite extends Cubit<Appstate>{
   ApiServis apiServis = ApiServis();
   Appcubite():super(InitialState());
-  getfoods() async {
-  emit(LoadeingState());
+  getfoods()async{
+    emit(LoadeingState());
   try {
-    var data = await apiServis.getData(url: "api/json/v1/1/categories.php");
-    List<Food> foods = [];
-    // التكرار على القائمة داخل المفتاح "categories"
-    for (var i in data["categories"]) {
-      foods.add(Food(
-          strCategory: i["strCategory"],
-          strCategoryThumb: i["strCategoryThumb"],
-          idCategory: i["idCategory"]));
-    }
-    emit(LoadedState(x: foods));
-  } catch (Erorr) {
-    emit(ErorrState(errormassge: Erorr.toString()));
+  var data = await  apiServis.getData(url: "api/json/v1/1/categories.php");
+  List<Food> foods = [];
+  for(var i in data["categories"]){
+    foods.add(Food(strCategory: i["strCategory"], strCategoryThumb: i["strCategoryThumb"], idCategory: i["idCategory"]));
   }
+  emit(LoadedState(x: foods));
+}  catch (Erorr) {
+  emit(ErorrState(errormassge: Erorr.toString()));
+  // TODO
 }
   }
+}

@@ -13,22 +13,27 @@ class ListFood extends StatefulWidget {
 }
 
 class _ListFoodState extends State<ListFood> {
-  List <Food>? x ;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<Appcubite,Appstate>(builder: (context,state){
-      if (state is LoadedState){
-        return SliverList.builder(itemBuilder: (context,index){
-            return Listfood(food: state.x[index],);
-          },itemCount:x!.length ,);
-      }
-      else if(state is ErrorState){
-        return SliverToBoxAdapter(child: Text("Erorr ${state.errormassge}"));
-      }
-      else{
-        return SliverToBoxAdapter(child: Center(child: CircularProgressIndicator(),));
-      }
-
-    });
+    return BlocBuilder<Appcubite, Appstate>(
+      builder: (context, state) {
+        if (state is LoadedState) {
+          return SliverList.builder(
+            itemBuilder: (context, index) {
+              return Listfood(food: state.x[index]); // استخدام state.x مباشرة
+            },
+            itemCount: state.x.length, // التأكد من عدم استخدام fodds!.length
+          );
+        } else if (state is ErorrState) {
+          return SliverToBoxAdapter(
+            child: Center(child: Text("Error: ${state.errormassge}")),
+          );
+        } else {
+          return const SliverToBoxAdapter(
+            child: Center(child: CircularProgressIndicator()),
+          );
+        }
+      },
+    );
   }
 }
