@@ -1,5 +1,6 @@
 import 'package:delivereats_app/screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -28,11 +29,11 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Center(
           child: Text(
             "Signin",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+            style: GoogleFonts.dancingScript(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: const Color.fromARGB(255, 0, 0, 0),
+                    ),
           ),
         ),
       ),

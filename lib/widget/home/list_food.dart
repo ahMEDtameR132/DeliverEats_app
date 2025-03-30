@@ -15,7 +15,7 @@ class ListFood extends StatefulWidget {
 class _ListFoodState extends State<ListFood> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<Appcubite, Appstate>(
+    return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
         if (state is LoadedState) {
           return SliverList.builder(

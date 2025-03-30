@@ -24,7 +24,6 @@ class Listfood extends StatelessWidget {
                       offset: Offset(0,3),
                     )
                   ],
-                  
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),

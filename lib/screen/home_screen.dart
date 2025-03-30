@@ -1,4 +1,5 @@
 import 'package:delivereats_app/screen/login_screen.dart';
+import 'package:delivereats_app/screen/profile_screen.dart';
 import 'package:delivereats_app/screen/seating_screen.dart';
 import 'package:delivereats_app/widget/home/list_food.dart';
 import 'package:delivereats_app/widget/home/listcircleavatar.dart';
@@ -69,6 +70,13 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text('Signin'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+              },
+            ),
+             ListTile(
+              leading: Icon(Icons.person),
+              title: Text('profile'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
               },
             ),
           ],
