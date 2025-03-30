@@ -48,7 +48,6 @@ class SettingsList extends StatelessWidget {
             leading: const Icon(Icons.logout),
             title: Text("Logout", style: GoogleFonts.dancingScript(fontSize: 20)),
             onTap: () {
-              // Navigator.pushReplacementNamed(context, '/login');
               Navigator.push(context, MaterialPageRoute(builder: (context)=> OpenScreen()));
             },
           ),
