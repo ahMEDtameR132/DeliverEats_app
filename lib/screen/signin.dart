@@ -2,14 +2,14 @@ import 'package:delivereats_app/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class Signin extends StatefulWidget {
+  const Signin({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<Signin> createState() => _SigninScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SigninScreenState extends State<Signin> {
   bool _isObscure = true;
   bool isChecked = false;
 

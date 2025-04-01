@@ -1,6 +1,5 @@
 import 'package:delivereats_app/management/cubit.dart';
 import 'package:delivereats_app/management/state.dart';
-import 'package:delivereats_app/model/food.dart';
 import 'package:delivereats_app/widget/home/listfood.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
